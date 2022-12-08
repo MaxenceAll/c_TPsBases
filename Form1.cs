@@ -131,6 +131,7 @@ namespace c_TPsBases
             int somme = 0;
             int noteMax = 0;
             int noteMin = -1;
+            int compteNote = 0;
             for (int i = 0; i < notes.Length; i++)
             {
                 if (Int32.TryParse(saisieNotes.Lines[i], out number))
@@ -141,14 +142,15 @@ namespace c_TPsBases
                 somme += notes[i];
                 if (notes[i] > noteMax) { noteMax = notes[i]; }
                 if (notes[i] < noteMin) { noteMin = notes[i]; }
-
+                compteNote++;
             }
             MessageBox.Show("Moyenne = " + somme / notes.Length);
             MessageBox.Show("Note Maxi (method max() )= " + notes.Max());
             MessageBox.Show("Note Maxi (method for)= " + noteMax);
             MessageBox.Show("Note Mini (method min() )= " + notes.Min());
             MessageBox.Show("Note Mini (method for)= " + noteMin);
-
+            MessageBox.Show("Nombre de notes : " + compteNote);
+            MessageBox.Show("Nombre de notes (method count()): " + notes.Length);
         }
 
         // Outils :
